@@ -1,0 +1,7 @@
+﻿<Solution>
+  <Project Path="src/api/TranslationTables.Api.csproj" />
+  <Project Path="src/web/web.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>

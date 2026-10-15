@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.VisualStudio.JavaScript.SDK/1.0.6887863">
+  <PropertyGroup>
+    <StartupCommand>npm run dev -- --host 127.0.0.1</StartupCommand>
+    <BuildCommand>npm run build</BuildCommand>
+    <ShouldRunBuildScript>false</ShouldRunBuildScript>
+    <BuildOutputFolder>$(MSBuildProjectDirectory)\dist</BuildOutputFolder>
+  </PropertyGroup>
+</Project>

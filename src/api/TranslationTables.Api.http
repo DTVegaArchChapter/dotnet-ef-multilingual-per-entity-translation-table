@@ -1,0 +1,70 @@
+@baseUrl = http://localhost:5072
+
+### Supported languages
+GET {{baseUrl}}/api/languages
+Accept: application/json
+
+### Categories in English
+GET {{baseUrl}}/api/categories?languageCode=en
+Accept: application/json
+
+### Category details with all translations
+GET {{baseUrl}}/api/categories/1
+Accept: application/json
+
+### Create a category with every language
+POST {{baseUrl}}/api/categories
+Content-Type: application/json
+
+{
+	"code": "audio",
+	"translations": [
+		{ "languageCode": "tr", "name": "Ses", "description": "Ses ekipmanlari" },
+		{ "languageCode": "en", "name": "Audio", "description": "Audio equipment" },
+		{ "languageCode": "fr", "name": "Audio", "description": "Equipement audio" }
+	]
+}
+
+### Update a category and all translations
+PUT {{baseUrl}}/api/categories/1
+Content-Type: application/json
+
+{
+	"code": "audio",
+	"translations": [
+		{ "languageCode": "tr", "name": "Ses", "description": "Ses ekipmanlari" },
+		{ "languageCode": "en", "name": "Audio", "description": "Audio equipment" },
+		{ "languageCode": "fr", "name": "Audio", "description": "Equipement audio" }
+	]
+}
+
+### Products in French
+GET {{baseUrl}}/api/products?languageCode=fr
+Accept: application/json
+
+### Create a product in one selected language
+POST {{baseUrl}}/api/products
+Content-Type: application/json
+
+{
+	"sku": "HEADSET-001",
+	"price": 79.90,
+	"categoryId": 1,
+	"languageCode": "en",
+	"name": "Studio headphones",
+	"description": "Closed-back headphones for everyday listening."
+}
+
+### Update one product translation
+PUT {{baseUrl}}/api/products/1
+Content-Type: application/json
+
+{
+	"sku": "HEADSET-001",
+	"price": 79.90,
+	"categoryId": 1,
+	"languageCode": "fr",
+	"name": "Casque studio",
+	"description": "Casque ferme pour une ecoute quotidienne."
+}
+###
