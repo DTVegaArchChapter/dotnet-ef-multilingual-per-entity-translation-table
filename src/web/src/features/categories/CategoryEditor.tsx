@@ -50,7 +50,7 @@ export default function CategoryEditor({ id, onCancel, onSaved }: { id?: number;
       <section className="mt-5 overflow-hidden rounded-xl border border-line bg-white shadow-sm" aria-label="Kategori çevirileri">
         <div className="overflow-x-auto">
           <table className="data-table min-w-[760px] table-fixed">
-            <colgroup><col className="w-36" />{orderedTranslations.map((translation) => <col key={translation.languageCode} className="w-64" />)}</colgroup>
+            <colgroup><col className="w-30" />{orderedTranslations.map((translation) => <col key={translation.languageCode} className="w-64" />)}</colgroup>
             <thead><tr><th scope="col">Alan</th>{orderedTranslations.map((translation) => <th scope="col" key={translation.languageCode}><div className="flex items-center justify-between"><span>{languageNames[translation.languageCode as keyof typeof languageNames]}</span><span className="font-mono text-[11px]">{translation.languageCode.toUpperCase()}</span></div></th>)}</tr></thead>
             <tbody>
               <tr><th scope="row" className="text-xs font-semibold text-ink">Ad</th>{orderedTranslations.map((translation) => <td key={translation.languageCode}><label className="sr-only" htmlFor={`category-name-${translation.languageCode}`}>{languageNames[translation.languageCode as keyof typeof languageNames]} dilinde ad</label><input className="field" id={`category-name-${translation.languageCode}`} value={translation.name} onChange={(event) => updateTranslation(translation.languageCode, 'name', event.target.value)} maxLength={120} required /></td>)}</tr>
